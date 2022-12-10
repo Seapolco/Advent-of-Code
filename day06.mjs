@@ -12,13 +12,13 @@ for(let i = 0; i < dataStream.length; i++) {
 
     let temp = [];
 
-    for(let j = 0; j < 4; j++) {
+    for(let j = 0; j < 14; j++) {
         temp.push(dataStream[i+j])
     }
     let tempset = new Set(temp);
 
-    if(tempset.size === 4) {
-        marker = i;
+    if(tempset.size === 14) {
+        marker = i  + 14;
         break;
     } 
 }
