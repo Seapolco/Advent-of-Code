@@ -71,14 +71,30 @@ let simples = instructions.map((e) => instrucNums(e))
 
 //console.log(simples)
 
+//Part one orders
+
+// function elfOrders(arr, obj){
+//     let moveCount = arr[0];
+    
+//     while(moveCount > 0) {
+//       obj[arr[2]].push(obj[arr[1]].pop())
+//       moveCount--
+//     }
+// }
+
+
 function elfOrders(arr, obj){
     let moveCount = arr[0];
     
+    let holdingBay = []
+    
     while(moveCount > 0) {
-      obj[arr[2]].push(obj[arr[1]].pop())
+      holdingBay.push(obj[arr[1]].pop())
       moveCount--
     }
-}
+    holdingBay.reverse();
+    obj[arr[2]] = obj[arr[2]].concat(holdingBay)
+  }
 
 simples.forEach((e) => elfOrders(e, crateObj));
 
